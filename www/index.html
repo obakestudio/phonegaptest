@@ -37,7 +37,7 @@
     * Create your own at http://cspisawesome.com
     -->
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
-
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <title>Hello World</title>
 </head>
@@ -50,7 +50,7 @@
             <p class="event received">SUCCEEEEEEEESSSSS</p>
         </div>
         <p>Yay this thing works!</p>
-        <button onclick="loadData()">Cleec me</button>
+        <button id="boton1" onclick="loadData()">Cleec me</button>
         <p id="saludo"></p>
         <p></p>
     </div>
@@ -70,9 +70,19 @@
                     document.getElementById("saludo").innerHTML = this.responseText;
                 }
             };
-            xhttp.open("GET", "http://obakestudio.com/sites/gsien/list.php", true);
+            xhttp.open("GET", "http://obakestudio.com/sites/gsien/appfunctions.php", true);
             xhttp.send();
         }
+
+        // $("#boton1").click(function(){
+        //     $("#saludo").load("http://obakestudio.com/sites/gsien/appfunctions.php", function(responseText,statusTxt,xhr){
+        //         if (statusTxt == "success")
+        //             alert("OK");
+        //         if (statusTxt == "error")
+        //             alert("Error: " + xhr.status + ": " + xhr.statusTxt);
+        //     })
+        // });
+
         app.initialize();
     </script>
 </body>
